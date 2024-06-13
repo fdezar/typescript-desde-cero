@@ -274,3 +274,27 @@ if (user?.name) {
     // código
 }
 
+// Decoradores
+function Decorator(target: any) {
+    console.log('I am a decorator');
+    target.prototype.email = 'hi@hi.com';
+}
+
+interface User20 {
+    name: string;
+    age: number;
+    email: string;
+}
+
+@Decorator
+class User20 {
+    name: string;
+    age: number;
+
+    constructor() {
+        this.name = '';
+        this.age = 0;
+    }
+}
+
+const user20 = new User20();
